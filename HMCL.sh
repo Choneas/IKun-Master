@@ -1,0 +1,1 @@
+java -jar ./HMCL-3.3.172.jar

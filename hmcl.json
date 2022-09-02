@@ -1,0 +1,60 @@
+{
+  "last": "run",
+  "backgroundType": "DEFAULT",
+  "commonDirType": "DEFAULT",
+  "commonpath": "C:\\Users\\Thricons\\AppData\\Roaming\\.minecraft",
+  "hasProxy": false,
+  "hasProxyAuth": false,
+  "proxyType": "HTTP",
+  "proxyPort": 0,
+  "width": 834.0,
+  "height": 520.0,
+  "theme": "#5c6bc0",
+  "localization": "def",
+  "downloadType": "bmclapi",
+  "configurations": {
+    "run": {
+      "global": {
+        "usesGlobal": true,
+        "javaArgs": "",
+        "minecraftArgs": "",
+        "maxMemory": 1792,
+        "permSize": "",
+        "width": 854,
+        "height": 480,
+        "javaDir": "",
+        "precalledCommand": "",
+        "serverIp": "",
+        "java": "Default",
+        "wrapper": "",
+        "fullscreen": false,
+        "noJVMArgs": false,
+        "notCheckGame": false,
+        "notCheckJVM": false,
+        "showLogs": false,
+        "gameDir": "",
+        "launcherVisibility": 1,
+        "gameDirType": 0,
+        "defaultJavaPath": ""
+      },
+      "gameDir": ".\\run",
+      "useRelativePath": false,
+      "selectedMinecraftVersion": "1.8.9"
+    }
+  },
+  "accounts": [
+    {
+      "uuid": "5b7d6c4b5fcc32a5af93587f4e6b8a1e",
+      "username": "IKUN",
+      "type": "offline",
+      "selected": true
+    }
+  ],
+  "fontFamily": "Consolas",
+  "fontSize": 12.0,
+  "logLines": 500,
+  "authlibInjectorServers": [],
+  "updateChannel": "STABLE",
+  "_version": 0,
+  "uiVersion": 0
+}

@@ -1,0 +1,65 @@
+
+buildscript {
+    ext.kotlin_version = '1.7.20-Beta'
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2' }
+    }
+    dependencies {
+        classpath group: 'com.github.jengelman.gradle.plugins', name: 'shadow', version: '4.0.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" //打包
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+compileJava.options.encoding = 'UTF-8'
+
+group 'net.minecraft'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://libraries.minecraft.net' }
+        maven { url 'https://enaium.gitee.io/maven' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+}
+
+dependencies {
+    compile group: 'net.minecraft', name: 'minecraft', version: '1.8.9'//游戏本体
+    compile 'com.google.zxing:core:3.5.0'
+    compile fileTree(include: ["*.jar"], dir: "lib")
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+shadowJar {
+    dependencies {
+        include(dependency('net.minecraft:minecraft'))
+        include(dependency('org.jetbrains.kotlin:kotlin-stdlib'))
+        include(dependency('com.google.zxing:core'))
+    }
+}
+
+build.dependsOn shadowJar
+repositories {
+    mavenCentral()
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
